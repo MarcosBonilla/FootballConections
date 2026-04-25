@@ -1,0 +1,9 @@
+{
+  "name": "football-connections",
+  "main": "src/server.ts",
+  "parties": {
+    "game-room": "src/rooms/game.ts"
+  },
+  "compatibilityDate": "2024-01-01",
+  "minify": false
+}

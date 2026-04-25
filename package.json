@@ -1,0 +1,29 @@
+{
+  "name": "football-connections",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun run --filter './apps/*' dev",
+    "dev:web": "bun run --filter web dev",
+    "dev:api": "bun run --filter api dev",
+    "dev:party": "bun run --filter partykit dev",
+    "build": "bun run --filter './apps/*' build",
+    "db:generate": "bun run --filter database generate",
+    "db:migrate": "bun run --filter database migrate",
+    "db:studio": "bun run --filter database studio",
+    "db:push": "bun run --filter database push",
+    "etl:download": "bun run --filter etl download",
+    "etl:players": "bun run --filter etl load:players",
+    "etl:edges": "bun run --filter etl load:edges"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "partykit": "^0.0.115",
+    "tsx": "^4.21.0",
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "@football-connections/partykit",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "partykit dev",
+    "deploy": "partykit deploy",
+    "tail": "partykit tail"
+  },
+  "dependencies": {
+    "@football-connections/database": "workspace:*",
+    "@football-connections/shared": "workspace:*",
+    "partykit": "^0.0.111",
+    "ws": "^8.20.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "^5.7.3"
+  }
+}
