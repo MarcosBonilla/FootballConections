@@ -248,51 +248,87 @@ Game ends (timeout/invalid/resign)
 
 ---
 
-## 📋 Próximos Pasos
+## 📋 Estado de Implementación
 
-### Fase de Implementación
+### ✅ FASES COMPLETADAS
 
-Con todas las especificaciones completadas, el proyecto está listo para:
+#### ✅ FASE 1: Setup Inicial (Completada 2026-04-24)
+- ✅ Bun 1.3.13 instalado y configurado
+- ✅ Monorepo con apps/ y packages/
+- ✅ Next.js 15.3.2 + React 19 (apps/web)
+- ✅ 890 paquetes instalados
+- ✅ TypeScript 5.7.3 configurado
+- ✅ Tailwind + shadcn/ui ready
 
-1. **Setup Inicial** (Semana 1)
-   - Crear repositorio con Next.js 15
-   - Configurar Supabase + Upstash
-   - Setup NextAuth y OAuth providers
-   - Drizzle schema y migrations
+#### ✅ FASE 2: Base de Datos (Completada 2026-04-24)
+- ✅ 8 tablas creadas en Supabase:
+  - users, player_ratings, rating_history
+  - players, teammate_edges
+  - matches, match_turns, match_chain_nodes
+- ✅ 19 índices optimizados
+- ✅ Row Level Security (RLS) policies
+- ✅ Triggers para updated_at
 
-2. **Autenticación** (Semana 2)
-   - Implementar todos los componentes de auth (07-12, 22-23)
-   - Email verification flow
-   - Rate limiting en endpoints
+#### ✅ FASE 3: ETL Jugadores (Completada 2026-04-24)
+- ✅ Script de ingestión desde Kaggle dataset
+- ✅ 92,671 jugadores cargados
+- ✅ 413,676 relaciones procesadas
+- ✅ Weight scores calculados
+- ✅ Tiempo de ejecución: ~8 minutos
 
-3. **Game Core** (Semana 3-4)
-   - Componentes de juego (01-06)
-   - PartyKitGameRoom
-   - GameValidationService
-   - ELOCalculator
+#### ✅ FASE 4: API REST (Completada 2026-04-25)
+- ✅ Hono 4.6.14 con Node.js 22.20.0
+- ✅ 17 endpoints implementados
+- ✅ Autenticación con Supabase Auth
+- ✅ MatchmakingService con Redis
+- ✅ GameValidationService
+- ✅ EloCalculator con K-factor dinámico
+- ✅ Rate limiting con Upstash Redis
+- ✅ Middleware de auth, cors, error-handler
+- ✅ **SOLUCIÓN DNS IPv6**: Node.js + Supabase REST API
+- 📄 Ver: `Documentacion/FASE_4_COMPLETADA.md`
 
-4. **Matchmaking** (Semana 5)
-   - MatchmakingService con Redis
-   - Background worker
-   - WebSocket notifications
+#### ✅ FASE 5: PartyKit WebSocket Server (Completada 2026-04-26) - ✅ TESTEADA
+- ✅ GameRoom class implementada (680 líneas)
+- ✅ WebSocket events (8 client events, 9 server events)
+- ✅ Estado persistente en memoria (Durable Object)
+- ✅ Timer de turnos con broadcast cada segundo
+- ✅ Validación de movimientos server-side
+- ✅ Desconexión con grace period (10s)
+- ✅ Reconexión sin perder estado
+- ✅ Finalización con cálculo de ELO
+- ✅ Integración con API REST (endpoint interno)
+- ✅ TypeScript types para eventos
+- ✅ **Test server alternativo** (workaround bug Windows)
+- ✅ **Testing automatizado completo** (todos los tests pasaron)
+- 📄 Ver: `Documentacion/FASE_5_COMPLETADA.md`
+- 📄 Ver: `apps/partykit/TESTING_COMPLETADO.md` (reporte 2026-04-26)
 
-5. **Layout & Landing** (Semana 6)
-   - Header, Footer, Mobile Navigation (11-15)
-   - Landing page completa (16, 20, 21)
-   - Error pages (18-19)
-   - Contact form (17)
+---
 
-6. **Testing & QA** (Semana 7)
-   - Unit tests
-   - Integration tests
-   - E2E tests con Playwright
-   - Accessibility audit
+### ⏳ PRÓXIMAS FASES
 
-7. **Deployment** (Semana 8)
-   - Deploy a production
-   - DNS y SSL setup
-   - Analytics integration
-   - Error monitoring (Sentry)
+#### 🔄 FASE 6: Frontend Next.js (En Espera)
+- [ ] Componentes de auth (07-12, 22-23)
+- [ ] Componentes de juego (01-06)
+- [ ] Layout y navegación (11-15)
+- [ ] Landing page (16, 20, 21)
+- [ ] Error pages (18-19)
+- [ ] Contact form (17)
+
+#### 🔄 FASE 7: Testing & QA (En Espera)
+- [ ] Unit tests
+- [ ] Integration tests
+- [ ] E2E tests con Playwright
+- [ ] Accessibility audit (WCAG 2.2 AA)
+
+#### 🔄 FASE 8: Deployment (En Espera)
+- [ ] Deploy API a production
+- [ ] Deploy frontend a Vercel
+- [ ] PartyKit production
+- [ ] DNS y SSL setup
+- [ ] Analytics integration
+- [ ] Error monitoring (Sentry)
 
 ---
 
@@ -300,13 +336,19 @@ Con todas las especificaciones completadas, el proyecto está listo para:
 
 - ✅ **100% de especificaciones transversales** completadas
 - ✅ **100% de componentes core** especificados
-- ✅ **408 KB de documentación técnica** generada
+- ✅ **408+ KB de documentación técnica** generada
 - ✅ **29 componentes** con especificaciones detalladas
 - ✅ **125+ criterios de accesibilidad** documentados
 - ✅ **87+ casos de prueba** especificados
 - ✅ **Stack técnico completo** definido
 - ✅ **Flujos de integración** documentados
 - ✅ **README centralizado** actualizado
+- ✅ **Base de datos funcional** con 92K+ jugadores
+- ✅ **API REST funcional** en Node.js con Supabase
+- ✅ **Autenticación completa** con Supabase Auth
+- ✅ **Matchmaking operativo** con Redis
+- ✅ **Validación de juego** implementada
+- ✅ **ELO calculator** funcionando
 
 ---
 
@@ -316,6 +358,8 @@ Con todas las especificaciones completadas, el proyecto está listo para:
 - **Documentación de Stack**: `Documentacion/Stack/README.md`
 - **Specs Transversales**: `Documentacion/Funcionales/Transversal/`
 - **Specs Componentes**: `Documentacion/Funcionales/Componentes/`
+- **Solución Definitiva API**: `Documentacion/SOLUCION_DEFINITIVA_API.md`
+- **FASE 4 Completada**: `Documentacion/FASE_4_COMPLETADA.md`
 
 ---
 

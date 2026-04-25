@@ -1,0 +1,15 @@
+{
+  "name": "@football-connections/etl",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "download": "bun run src/download-dataset.ts",
+    "load:players": "bun run src/load-players-rest.ts",
+    "load:edges": "bun run src/load-edges-rest.ts"
+  },
+  "dependencies": {
+    "@football-connections/database": "workspace:*",
+    "@supabase/supabase-js": "^2.48.0",
+    "csv-parse": "^5.6.0"
+  }
+}
